@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+cmake = "==3.22.4"
+numpy = "==1.22.4"
+opencv-python = "==4.5.5.64"
+python-dotenv = "==0.20.0"
+dlib = {path = "./public/dlib/dlib-19.22.99-cp310-cp310-win_amd64.whl"}
+pyautogui = "*"
+fastapi = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+
+[dev-packages]
+flake8 = "*"
+autopep8 = "*"
+
+[requires]
+python_version = "3.10"
+
+[scripts]
+start = "python src/tracker.py"

@@ -1,24 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { RepositionButton } from "./buttons/RepositionButton";
+import SingleButton from "./SingleButton";
+import { iconNameEnum } from "./SingleButton";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App flex m-0 h-screen w-screen justify-center bg-slate-900">
+      {RepositionButton.HoverButton()}
     </div>
   );
 }

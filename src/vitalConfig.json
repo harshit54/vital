@@ -1,0 +1,12 @@
+{
+  "screenSize": {
+    "width": 1920,
+    "height": 1080
+  },
+  "windowSize": {
+    "width": 500,
+    "height": 8
+  },
+  "dwellTime": 3,
+  "defaultFontSize": 20
+}

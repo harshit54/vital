@@ -1,0 +1,14 @@
+{
+  "viewportName": "VITAL",
+  "screenSize": {
+    "width": 1920,
+    "height": 1080
+  },
+  "windowSize": {
+    "width": 500,
+    "height": 8
+  },
+  "dwellTime": 3,
+  "defaultFontPath": "./public/Quicksand-Regular.ttf",
+  "defaultFontSize": 20
+}

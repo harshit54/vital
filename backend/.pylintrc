@@ -1,0 +1,10 @@
+[MASTER]
+disable = C0114,C0115, C0116
+
+[tool.pylint.basic]
+argument-naming-style = "PascalCase"
+class-const-naming-style = "UPPER_CASE"
+class-naming-style = "PascalCase"
+const-naming-style = "UPPER_CASE"
+function-naming-style = "PascalCase"
+class-attribute-naming-style = "pascalCase"
