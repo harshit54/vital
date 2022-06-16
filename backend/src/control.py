@@ -2,6 +2,7 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 import pyautogui as pag
 from dotenv import dotenv_values
+from math import floor
 
 config = dotenv_values(".env")
 DEADZONE = float(config['DEADZONE'])
@@ -127,8 +128,9 @@ class Scroll(State):
         Scroll by x and y
         Horizontal scroll works only in Linux and Mac
         '''
-        pag.hscroll(x)
-        pag.vscroll(y)
+        print("Scroll By:", x, y)
+        pag.hscroll(floor(x * 10))
+        pag.vscroll(floor(y * 10))
 
 
 class PreciseMove(State):
@@ -174,3 +176,8 @@ class PreciseScroll(State):
         '''
         pag.hscroll(SCROLL_PRECISION * x)
         pag.vscroll(SCROLL_PRECISION * y)
+
+
+def openKeyboard():
+    pag.hotkey('win', 'ctrl', 'o')
+

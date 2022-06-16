@@ -3,3 +3,4 @@ ignore =
     E501
     W504
     E722
+max_line_length = 120

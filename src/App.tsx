@@ -1,7 +1,5 @@
 import "./App.css";
 import { RepositionButton } from "./buttons/RepositionButton";
-import SingleButton from "./SingleButton";
-import { iconNameEnum } from "./SingleButton";
 
 function App() {
   return (

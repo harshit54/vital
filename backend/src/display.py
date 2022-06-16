@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-import utils
+import src.utils as utils
 
 
 def eye_on_mask(mask, side, shape):

@@ -1,5 +1,5 @@
 import numpy as np
-from display import center_of_eye
+from src.display import center_of_eye
 import cv2
 
 
@@ -26,13 +26,10 @@ def pupil_tracker(thresh, mid, img):
 
 def diff_calculator(thresh, mid, img, shape):
     left_pupil, right_pupil = pupil_tracker(thresh, mid, img)
-    print(left_pupil, right_pupil)
     try:
         left_eye, right_eye = center_of_eye(img, shape)
-        move_x = ((left_pupil[0] - left_eye[0])
-                  (right_pupil[0] - right_eye[0])) / 2
-        move_y = ((left_pupil[1] - left_eye[1]) +
-                  (right_pupil[1] - right_eye[1])) / 2
+        move_x = ((left_pupil[0] - left_eye[0]) + (right_pupil[0] - right_eye[0])) / 2
+        move_y = ((left_pupil[1] - left_eye[1]) + (right_pupil[1] - right_eye[1])) / 2
         return (move_x, move_y)
     except:
         return (0, 0)
@@ -40,7 +37,7 @@ def diff_calculator(thresh, mid, img, shape):
 
 def contouring(thresh, mid, img, right=False):
     cnts, _ = cv2.findContours(
-        thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+        thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
     try:
         cnt = max(cnts, key=cv2.contourArea)
         M = cv2.moments(cnt)
